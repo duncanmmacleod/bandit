@@ -55,6 +55,7 @@ def request_without_timeout(context):
     if (
         "requests" in context.call_function_name_qual
         and context.call_function_name in http_verbs
+        and context.call_function_name_qual.rsplit(".", 1)[0] != "requests_mock"
     ):
         # check for missing timeout
         if context.check_call_arg_value("timeout") is None:

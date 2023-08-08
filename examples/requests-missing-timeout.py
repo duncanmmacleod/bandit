@@ -21,3 +21,8 @@ requests.options('https://gmail.com', timeout=5)
 requests.head('https://gmail.com')
 requests.head('https://gmail.com', timeout=None)
 requests.head('https://gmail.com', timeout=5)
+
+import requests_mock
+requests_mock.get('https://gmail.com')
+requests_mock.get('https://gmail.com', timeout=None)
+requests_mock.get('https://gmail.com', timeout=5)
